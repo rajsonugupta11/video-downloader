@@ -41,6 +41,15 @@ def download():
 
     url = url.replace("youtube.com/shorts/", "youtube.com/watch?v=")
 
+    # Platform-wise cookies
+    cookies_file = None
+    if "instagram.com" in url:
+        cookies_file = "cookies_instagram.txt"
+    elif "facebook.com" in url:
+        cookies_file = "cookies_facebook.txt"
+    elif "youtube.com" in url or "youtu.be" in url:
+        cookies_file = "cookies_youtube.txt"
+
     try:
         with yt_dlp.YoutubeDL({'quiet': True}) as ydl_probe:
             info_dict = ydl_probe.extract_info(url, download=False)
@@ -74,6 +83,9 @@ def download():
             'overwrites': True
         }
 
+        if cookies_file and os.path.exists(cookies_file):
+            ydl_opts['cookiefile'] = cookies_file
+
         if download_type == 'audio':
             ydl_opts.update({
                 'format': 'bestaudio/best',
@@ -101,11 +113,7 @@ def download():
                     else:
                         final_path = ydl.prepare_filename(info)
 
-                    if download_type == 'audio':
-                        final_path = final_path.rsplit('.', 1)[0] + '.mp3'
-                    else:
-                        final_path = final_path.rsplit('.', 1)[0] + '.mp4'
-
+                    final_path = final_path.rsplit('.', 1)[0] + f".{ext}"
                     progress_data['filename'] = os.path.basename(final_path)
             except Exception as e:
                 progress_data['error'] = str(e)
