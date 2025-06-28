@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ultra Downloader Pro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+  <style>
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <h2>Ultra Downloader Pro</h2>
+      <p>Download videos and audio from popular platforms</p>
+    </div>
+
+    <div class="input-group">
+      <input type="text" id="url" placeholder="Paste video URL here">
+    </div>
+
+    <div class="select-group">
+      <select id="type">
+        <option value="video">High Quality Video</option>
+        <option value="audio">MP3 Audio Only</option>
+      </select>
+    </div>
+
+    <button class="btn" onclick="startDownload()">
+      <span class="download-icon">⏬</span> Download Now
+    </button>
+
+    <p id="status"></p>
+
+    <div class="progress-wrapper" id="progressWrapper" style="display:none; margin-top:1rem;">
+      <div class="progress-bar" style="height:10px; border-radius:9999px; background:#dfe6e9; overflow:hidden;">
+        <div class="progress-fill" id="progressFill" style="height:100%; background: linear-gradient(90deg, var(--primary), var(--accent)); width: 0%; transition: width 0.2s ease;"></div>
+      </div>
+      <div class="progress-text" id="progressText" style="font-size: 0.9rem; color: #2d3436; margin-top: 0.3rem; text-align: center;">Downloading... 0%</div>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-text">Fast Processing</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🔒</div>
+        <div class="feature-text">Secure Downloads</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">💯</div>
+        <div class="feature-text">High Quality</div>
+      </div>
+        <!-- Contact Section -->
+
+    </div>
+    <div class="contact-wrapper">
+  <p>📬 <strong>Connect with me</strong></p>
+  <div class="contact-bar">
+    <a href="https://www.linkedin.com/in/sonu-kumar-836688279/?originalSubdomain=in" target="_blank" title="LinkedIn Profile">💼 LinkedIn</a>
+    <a href="https://www.instagram.com/rajsonugupta11" target="_blank" title="Instagram Profile">📷 Instagram</a>
+    <a href="https://github.com/rajsonugupta11" target="_blank" title="GitHub Projects">🐙 GitHub</a>
+    <a href="https://t.me/rajsonugupta11" target="_blank" title="Telegram Channel">✈️ Telegram</a>
+    <a href="mailto:rajsonugupta9@gmail.com" target="_blank" title="Send me an email">✉️ Gmail</a>
+  </div>
+</div>
+  </div>
+
+  <!-- Overlay Loader -->
+  <div id="overlayLoader" style="
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 1.1rem;
+  ">
+    <div class="spinner" style="
+      width: 40px;
+      height: 40px;
+      border: 4px solid #fff;
+      border-top: 4px solid #00cec9;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 1rem;
+    "></div>
+    <p>Please wait while we start your download...</p>
+    
+  </div>
+
+
+
+  <script>
+  let pollInterval;
+  let hasRefreshed = false;
+  const downloadBtn = document.querySelector('.btn');
+  const downloadIcon = document.querySelector('.download-icon');
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedUrl = sessionStorage.getItem('url');
+    if (savedUrl) {
+      document.getElementById('url').value = savedUrl;
+    }
+  });
+
+  async function startDownload() {
+    const urlInput = document.getElementById('url');
+    const url = urlInput.value.trim();
+    const type = document.getElementById('type').value;
+    const statusEl = document.getElementById('status');
+    const progressWrapper = document.getElementById('progressWrapper');
+    const progressFill = document.getElementById('progressFill');
+    const progressText = document.getElementById('progressText');
+    const overlay = document.getElementById('overlayLoader');
+
+    if (!url) {
+      alert("Please paste a valid URL.");
+      return;
+    }
+
+    // Disable button + update text
+    if (downloadBtn) {
+      downloadBtn.disabled = true;
+      downloadBtn.style.opacity = 0.6;
+      downloadBtn.innerHTML = '<span class="download-icon">⏳</span> Please wait...';
+    }
+
+    sessionStorage.setItem('url', url); // ✅ Use sessionStorage instead of localStorage
+    if (overlay) overlay.style.display = "flex";
+
+    statusEl.style.display = "none";
+    progressWrapper.style.display = "none";
+    progressFill.style.width = "0%";
+
+    try {
+      const response = await fetch('/download', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url, type })
+      });
+
+      const data = await response.json();
+      if (overlay) overlay.style.display = "none";
+
+      if (data.started) {
+        progressWrapper.style.display = "block";
+
+        pollInterval = setInterval(async () => {
+          try {
+            const res = await fetch('/progress');
+            const prog = await res.json();
+
+            if (prog.error) {
+              clearInterval(pollInterval);
+              showError(statusEl, prog.error, overlay);
+              return;
+            }
+
+            const percent = prog.percent || 0;
+            const eta = prog.eta ? `${prog.eta}s left` : 'Calculating...';
+            progressFill.style.width = percent + "%";
+            progressText.textContent = `Downloading... ${percent.toFixed(1)}% • ${eta}`;
+
+            if (prog.filename) {
+              clearInterval(pollInterval);
+              progressText.textContent = "Download complete!";
+              animateConfetti();
+              triggerDownload(prog.filename);
+            }
+          } catch (err) {
+            clearInterval(pollInterval);
+            showError(statusEl, err.message, overlay);
+          }
+        }, 1000);
+      } else if (data.error) {
+        showError(statusEl, data.error, overlay);
+      }
+    } catch (error) {
+      showError(statusEl, error.message, overlay);
+    }
+  }
+
+  function triggerDownload(filename) {
+    if (hasRefreshed) return;
+    hasRefreshed = true;
+
+    const safeName = encodeURIComponent(filename);
+    const link = document.createElement('a');
+    link.href = `/downloads/${safeName}`;
+    link.download = '';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    const statusEl = document.getElementById('status');
+    statusEl.className = "status success";
+    statusEl.style.display = "block";
+    statusEl.textContent = "✅ Download complete! File will appear shortly.";
+
+    setTimeout(() => {
+      // sessionStorage already has URL if needed
+      window.location.href = window.location.href;
+    }, 3000);
+  }
+
+  function showError(statusEl, message, overlay) {
+    if (overlay) overlay.style.display = "none";
+    statusEl.className = "status error";
+    statusEl.style.display = "block";
+    statusEl.textContent = "✗ Error: " + message;
+
+    // Re-enable button + restore text
+    if (downloadBtn) {
+      downloadBtn.disabled = false;
+      downloadBtn.style.opacity = 1;
+      downloadBtn.innerHTML = '<span class="download-icon">⏬</span> Download Now';
+    }
+  }
+
+  function animateConfetti() {
+    const confettiCount = 40;
+    const container = document.querySelector('.card');
+
+    for (let i = 0; i < confettiCount; i++) {
+      const confetti = document.createElement('div');
+      confetti.style.position = 'absolute';
+      confetti.style.width = '10px';
+      confetti.style.height = '10px';
+      confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+      confetti.style.borderRadius = '50%';
+      confetti.style.top = '0';
+      confetti.style.left = `${Math.random() * 100}%`;
+      confetti.style.opacity = '0.8';
+      confetti.style.transform = `scale(${Math.random() * 0.5 + 0.5})`;
+      confetti.style.animation = `confetti-fall ${Math.random() * 3 + 2}s ease-in forwards`;
+
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes confetti-fall {
+          to {
+            transform: translateY(100vh) rotate(${Math.random() * 360}deg);
+            opacity: 0;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+
+      container.appendChild(confetti);
+      setTimeout(() => {
+        confetti.remove();
+        style.remove();
+      }, 3000);
+    }
+  }
+</script>
+
+</body>
+</html>
