@@ -17,18 +17,34 @@
 
 ## ✨ Features
 
-- ✅ Download from **YouTube**, **Instagram**, **Facebook**
-- 🔐 Cookie-based login for **private** or **restricted** content
-- 🎵 Supports MP4 / MP3 (best available quality)
-- ⚡ Multithreaded download for speed
-- 🧹 Auto-delete file from server after browser download
-- 💻 Clean and Modern Dark UI
+- ✅ Supports download from **YouTube**, **Instagram**, and **Facebook**
+- 🔐 Cookie-based login for **private/restricted** content
+- 🎵 Supports MP4 / MP3 download (best available quality)
+- ⚡ Multithreaded download for faster speed
+- 🧹 Auto-delete file from server after download
+- 💻 Modern, clean dark-themed UI
 
 ---
 
-## 📁 Project Structure
+## 🧠 How to Use
 
 ```bash
+# 1. Clone the repository
+git clone https://github.com/rajsonugupta11/video-downloader.git
+cd video-downloader
+
+# 2. (Optional) Create a virtual environment
+python -m venv venv
+venv\Scripts\activate
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Run the Flask app
+python app.py
+
+
+📁 Project Structure + 🍪 Cookies Setup
 video-downloader/
 ├── static/                  # CSS, JS, assets
 ├── templates/               # HTML frontend
@@ -41,12 +57,35 @@ video-downloader/
 └── README.md                # Project readme
 
 
-🧠 How to Use
+🧠 To get cookies for private/restricted videos:
+
+Login to your Instagram, Facebook, or YouTube account in Chrome
+
+Install the Get cookies.txt browser extension
+
+Export cookies and save them as:
+
+cookies_instagram.txt
+
+cookies_facebook.txt
+
+cookies_youtube.txt
+
+
+👨‍💻 Developer
+Built with ❤️ by Raj Sonu
+
+
+---
+
+## 🧠 How to Use
+
+```bash
 # 1. Clone the repository
 git clone https://github.com/rajsonugupta11/video-downloader.git
 cd video-downloader
 
-# 2. (Optional) Create virtual env
+# 2. (Optional) Create a virtual environment
 python -m venv venv
 venv\Scripts\activate
 
@@ -55,43 +94,3 @@ pip install -r requirements.txt
 
 # 4. Run the Flask app
 python app.py
-
-
-How to Get Cookies
-
-For private/restricted videos (followers-only):
-
-Login to your IG/FB/YT account in Chrome
-
-Install Get cookies.txt Extension
-
-Export cookies
-
-Save them as:
-
-cookies_instagram.txt
-cookies_facebook.txt
-cookies_youtube.txt
-
----
-
-## 👨‍💻 Developer
-
-Built with ❤️ by **Raj Sonu**
-
-- 🔗 [LinkedIn: sonu-kumar-836688279](https://www.linkedin.com/in/sonu-kumar-836688279)    - 📸 [Instagram: @rajsonugupta11](https://instagram.com/rajsonugupta11)
-
-
-
-### ✅ Instructions:
-
-1. Open your `README.md` file in VS Code  
-2. Replace everything with the above  
-3. Save and run:
-
-```bash
-git add README.md
-git commit -m "Revamp README with clickable links and modern UI"
-git push
-
-
