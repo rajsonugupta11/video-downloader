@@ -1,140 +1,87 @@
-# 🎬 Ultra Downloader Pro
+<h1 align="center">🎬 Ultra Downloader Pro</h1>
 
-**Ultra Downloader Pro** is a full-stack web application that allows users to **download high-quality videos and audio** from platforms like **YouTube, Instagram, and Facebook** using secure cookie-based authentication.
-
-> ⚡ Powered by Flask & yt-dlp • Deployable on [Render](https://render.com) • Clean UI • Fast performance
+<p align="center">
+  <strong>Download high-quality videos and audio</strong> from <em>YouTube</em>, <em>Instagram</em>, and <em>Facebook</em> using secure cookie-based login.
+  <br><br>
+  <b>Fast ⚡ | Secure 🔒 | Open Source 💡 | Easy to Deploy ☁️</b>
+</p>
 
 ---
 
-## 🔗 Live Demo
+## 🚀 Live Demo
 
-👉 *Coming soon on Render*  
-🛠️ Deploy it yourself with 1-click on [Render](https://render.com)
+- 🌐 **Coming Soon** on [Render](https://render.com)
+- 🛠️ Deploy it yourself with [One-Click Render Deploy](https://render.com)
 
 ---
 
 ## ✨ Features
 
-- ✅ Supports downloads from **YouTube**, **Instagram**, and **Facebook**
-- 🔐 **Cookie-based login** for private/restricted content
-- 🎵 Download in **MP4 / MP3 / best available formats**
-- 🚀 Multithreaded download support
-- 📊 Live progress display during downloads
-- 🧹 Auto-delete files after download completes
-- 💻 Simple, responsive & dark-themed frontend UI
-- 📂 Deploy-ready with `render.yaml` config
+- ✅ Download from **YouTube**, **Instagram**, **Facebook**
+- 🔐 Cookie-based login for **private** or **restricted** content
+- 🎵 Supports MP4 / MP3 (best available quality)
+- ⚡ Multithreaded download for speed
+- 🧹 Auto-delete file from server after browser download
+- 💻 Clean and Modern Dark UI
 
 ---
 
-## 🧰 Tech Stack
-
-| Technology     | Usage                         |
-|----------------|-------------------------------|
-| Python (Flask) | Web backend server            |
-| yt-dlp         | Core video/audio downloader   |
-| HTML/CSS/JS    | Frontend interface            |
-| Render         | Cloud deployment              |
-
----
-
-## 🏗 Project Structure
-
-
-
-
-video-downloader/
-│
-├── static/ # Static files (CSS, images)
-├── templates/ # HTML templates
-├── cookies_instagram.txt # IG cookies (optional)
-├── cookies_facebook.txt # FB cookies (optional)
-├── cookies_youtube.txt # YT cookies (optional)
-├── app.py # Main Flask application
-├── requirements.txt # Python dependencies
-├── render.yaml # Render deployment config
-└── README.md
-
-
-
-
----
-
-## 🚀 Run Locally
+## 📁 Project Structure
 
 ```bash
-# Clone the repo
+video-downloader/
+├── static/                  # CSS, JS, assets
+├── templates/               # HTML frontend
+├── app.py                   # Flask server
+├── cookies_instagram.txt    # IG cookies
+├── cookies_facebook.txt     # FB cookies
+├── cookies_youtube.txt      # YT cookies
+├── render.yaml              # Render deploy config
+├── requirements.txt         # All dependencies
+└── README.md                # Project readme
+
+
+🧠 How to Use
+# 1. Clone the repository
 git clone https://github.com/rajsonugupta11/video-downloader.git
 cd video-downloader
 
-# Optional: Create virtual environment
+# 2. (Optional) Create virtual env
 python -m venv venv
-venv\Scripts\activate  # On Windows
+venv\Scripts\activate
 
-# Install required packages
+# 3. Install dependencies
 pip install -r requirements.txt
 
-# Start the Flask app
+# 4. Run the Flask app
 python app.py
 
 
+How to Get Cookies
 
+For private/restricted videos (followers-only):
 
-🔐 Private Video Download (Cookies Setup)
-To download content from private/follower-only accounts (Instagram, Facebook, YouTube):
+Login to your IG/FB/YT account in Chrome
 
-Install this Chrome extension: Get cookies.txt
+Install Get cookies.txt Extension
 
-Log into your account (IG/FB/YT) in Chrome
+Export cookies
 
-Export cookies to a file
-
-Save it as:
+Save them as:
 
 cookies_instagram.txt
-
 cookies_facebook.txt
-
 cookies_youtube.txt
 
-Place those files in the root folder
 
-📝 The app will automatically use these cookies during download.
 
-🖼 Screenshots
-<details> <summary>🔻 Click to view interface</summary>
-Input Form	Download Preview
-	
+### ✅ Instructions:
 
-</details>
-👨‍💻 Developer
-Made with 💙 by Raj Sonu
+1. Open your `README.md` file in VS Code  
+2. Replace everything with the above  
+3. Save and run:
 
-🔗 LinkedIn: @sonu-kumar-836688279
-
-📷 Instagram: @rajsonugupta11
-
-📄 License
-Licensed under the MIT License.
-You are free to use, modify, and share.
-
-⭐ Like this project?
-If you found this useful:
-✅ Star this repo
-✅ Fork it
-✅ Share with others
-
-yaml
-Copy
-Edit
-
----
-
-### 👨‍🔧 To Apply:
-
-1. Open `README.md` file in VS Code.
-2. Paste the above full content.
-3. Run these commands:
 ```bash
 git add README.md
-git commit -m "Complete professional README with all sections"
+git commit -m "Revamp README with clickable links and modern UI"
 git push
