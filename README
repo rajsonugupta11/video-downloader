@@ -1,2 +1,140 @@
-this is only work on local host but it is still working 
-for Facebook
+# 🎬 Ultra Downloader Pro
+
+**Ultra Downloader Pro** is a full-stack web application that allows users to **download high-quality videos and audio** from platforms like **YouTube, Instagram, and Facebook** using secure cookie-based authentication.
+
+> ⚡ Powered by Flask & yt-dlp • Deployable on [Render](https://render.com) • Clean UI • Fast performance
+
+---
+
+## 🔗 Live Demo
+
+👉 *Coming soon on Render*  
+🛠️ Deploy it yourself with 1-click on [Render](https://render.com)
+
+---
+
+## ✨ Features
+
+- ✅ Supports downloads from **YouTube**, **Instagram**, and **Facebook**
+- 🔐 **Cookie-based login** for private/restricted content
+- 🎵 Download in **MP4 / MP3 / best available formats**
+- 🚀 Multithreaded download support
+- 📊 Live progress display during downloads
+- 🧹 Auto-delete files after download completes
+- 💻 Simple, responsive & dark-themed frontend UI
+- 📂 Deploy-ready with `render.yaml` config
+
+---
+
+## 🧰 Tech Stack
+
+| Technology     | Usage                         |
+|----------------|-------------------------------|
+| Python (Flask) | Web backend server            |
+| yt-dlp         | Core video/audio downloader   |
+| HTML/CSS/JS    | Frontend interface            |
+| Render         | Cloud deployment              |
+
+---
+
+## 🏗 Project Structure
+
+
+
+
+video-downloader/
+│
+├── static/ # Static files (CSS, images)
+├── templates/ # HTML templates
+├── cookies_instagram.txt # IG cookies (optional)
+├── cookies_facebook.txt # FB cookies (optional)
+├── cookies_youtube.txt # YT cookies (optional)
+├── app.py # Main Flask application
+├── requirements.txt # Python dependencies
+├── render.yaml # Render deployment config
+└── README.md
+
+
+
+
+---
+
+## 🚀 Run Locally
+
+```bash
+# Clone the repo
+git clone https://github.com/rajsonugupta11/video-downloader.git
+cd video-downloader
+
+# Optional: Create virtual environment
+python -m venv venv
+venv\Scripts\activate  # On Windows
+
+# Install required packages
+pip install -r requirements.txt
+
+# Start the Flask app
+python app.py
+
+
+
+
+🔐 Private Video Download (Cookies Setup)
+To download content from private/follower-only accounts (Instagram, Facebook, YouTube):
+
+Install this Chrome extension: Get cookies.txt
+
+Log into your account (IG/FB/YT) in Chrome
+
+Export cookies to a file
+
+Save it as:
+
+cookies_instagram.txt
+
+cookies_facebook.txt
+
+cookies_youtube.txt
+
+Place those files in the root folder
+
+📝 The app will automatically use these cookies during download.
+
+🖼 Screenshots
+<details> <summary>🔻 Click to view interface</summary>
+Input Form	Download Preview
+	
+
+</details>
+👨‍💻 Developer
+Made with 💙 by Raj Sonu
+
+🔗 LinkedIn: @sonu-kumar-836688279
+
+📷 Instagram: @rajsonugupta11
+
+📄 License
+Licensed under the MIT License.
+You are free to use, modify, and share.
+
+⭐ Like this project?
+If you found this useful:
+✅ Star this repo
+✅ Fork it
+✅ Share with others
+
+yaml
+Copy
+Edit
+
+---
+
+### 👨‍🔧 To Apply:
+
+1. Open `README.md` file in VS Code.
+2. Paste the above full content.
+3. Run these commands:
+```bash
+git add README.md
+git commit -m "Complete professional README with all sections"
+git push
