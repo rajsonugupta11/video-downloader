@@ -1,96 +1,39 @@
-<h1 align="center">🎬 Ultra Downloader Pro</h1>
+# 🎬 Ultra Downloader Pro
 
-<p align="center">
-  <strong>Download high-quality videos and audio</strong> from <em>YouTube</em>, <em>Instagram</em>, and <em>Facebook</em> using secure cookie-based login.
-  <br><br>
-  <b>Fast ⚡ | Secure 🔒 | Open Source 💡 | Easy to Deploy ☁️</b>
-</p>
+A full-stack web app that allows users to **download high-quality videos and audio** from platforms like **YouTube**, **Instagram**, and **Facebook** — including **private/restricted** content using cookie-based authentication.
+
+> ⚡ Powered by Flask & yt-dlp • Secure 🔒 • Modern UI • Deployable on Render
 
 ---
 
-## 🚀 Live Demo
+## 🌐 Live Demo
 
-- 🌐 **Coming Soon** on [Render](https://render.com)
-- 🛠️ Deploy it yourself with [One-Click Render Deploy](https://render.com)
+- 🚀 *Coming soon on [Render](https://render.com)*  
+- 🛠️ Deploy it yourself via: [Render Deploy Config](https://render.com)
 
 ---
 
 ## ✨ Features
 
-- ✅ Supports download from **YouTube**, **Instagram**, and **Facebook**
-- 🔐 Cookie-based login for **private/restricted** content
-- 🎵 Supports MP4 / MP3 download (best available quality)
-- ⚡ Multithreaded download for faster speed
-- 🧹 Auto-delete file from server after download
-- 💻 Modern, clean dark-themed UI
+- ✅ Supports downloads from **YouTube**, **Instagram**, and **Facebook**
+- 🔐 **Cookie-based login** for private or restricted content
+- 🎵 Download in **MP4 / MP3** – Best available quality
+- ⚡ **Multithreaded** download support for faster processing
+- 🧹 Auto-delete server file after browser download
+- 🖤 Clean and modern **Dark UI** for better UX
 
 ---
 
-## 🧠 How to Use
+## 🧱 Tech Stack
 
-```bash
-# 1. Clone the repository
-git clone https://github.com/rajsonugupta11/video-downloader.git
-cd video-downloader
-
-# 2. (Optional) Create a virtual environment
-python -m venv venv
-venv\Scripts\activate
-
-# 3. Install dependencies
-pip install -r requirements.txt
-
-# 4. Run the Flask app
-python app.py
-
-
-📁 Project Structure + 🍪 Cookies Setup
-video-downloader/
-├── static/                  # CSS, JS, assets
-├── templates/               # HTML frontend
-├── app.py                   # Flask server
-├── cookies_instagram.txt    # IG cookies
-├── cookies_facebook.txt     # FB cookies
-├── cookies_youtube.txt      # YT cookies
-├── render.yaml              # Render deploy config
-├── requirements.txt         # All dependencies
-└── README.md                # Project readme
-
-
-🧠 To get cookies for private/restricted videos:
-
-Login to your Instagram, Facebook, or YouTube account in Chrome
-
-Install the Get cookies.txt browser extension
-
-Export cookies and save them as:
-
-cookies_instagram.txt
-
-cookies_facebook.txt
-
-cookies_youtube.txt
-
-
-👨‍💻 Developer
-Built with ❤️ by Raj Sonu
-
+| Layer     | Technology                          |
+|-----------|-------------------------------------|
+| Frontend  | HTML5, CSS3, JavaScript             |
+| Backend   | Python (Flask)                      |
+| Library   | [yt-dlp](https://github.com/yt-dlp/yt-dlp) |
+| Hosting   | [Render](https://render.com)        |
 
 ---
 
-## 🧠 How to Use
+## 🛠️ Project Structure
 
-```bash
-# 1. Clone the repository
-git clone https://github.com/rajsonugupta11/video-downloader.git
-cd video-downloader
-
-# 2. (Optional) Create a virtual environment
-python -m venv venv
-venv\Scripts\activate
-
-# 3. Install dependencies
-pip install -r requirements.txt
-
-# 4. Run the Flask app
-python app.py
