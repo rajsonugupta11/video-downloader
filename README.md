@@ -83,3 +83,20 @@ Made with ❤️ by [Rajsonugupta11](https://github.com/rajsonugupta11)
 </p>
 
 
+
+
+
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Home UI
+<p align="center">
+  <img src="screenshots/home_ui.png" alt="Home UI" width="700">
+</p>
+
+### ⚙️ Main Features UI
+<p align="center">
+  <img src="screenshots/main_ui.png" alt="Main UI" width="700">
+</p>
