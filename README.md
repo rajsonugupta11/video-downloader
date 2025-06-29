@@ -14,8 +14,8 @@
 
 ## 🚀 Live Demo
 
-- 🔗 *Coming soon on [Render](https://render.com)*
-- ☁️ Deploy: [One-Click Render Deploy](https://render.com)
+- 🔗  [Render](https://video-downloader-t5p1.onrender.com/)*
+- ☁️ Deploy: 
 
 ---
 
