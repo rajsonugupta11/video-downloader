@@ -31,4 +31,55 @@
 ---
 
 ## 📁 Project Structure
+video-downloader/
+├── app.py
+├── templates/
+│ └── index.html
+├── requirements.txt
+├── cookies_youtube.txt
+├── cookies_instagram.txt
+├── cookies_facebook.txt
+└── README.md
+
+
+---
+
+## 🛠️ Tech Stack
+
+- **Python 3.10**
+- **Flask**
+- **yt-dlp**
+- **HTML/CSS**
+- **Render.com** for deployment
+
+---
+
+## 📌 Note
+
+This project uses browser cookies for authentication to download private content. Make sure to use it responsibly and within legal boundaries.
+
+---
+
+## 🧑‍💻 Author
+
+Made with ❤️ by [Rajsonugupta11](https://github.com/rajsonugupta11)
+
+
+
+---
+
+## 📬 Connect with Me
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/sonu-kumar-836688279/" target="_blank">
+    <img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin">
+  </a>
+  <a href="https://instagram.com/rajsonugupta11" target="_blank">
+    <img alt="Instagram" src="https://img.shields.io/badge/Instagram-purple?style=for-the-badge&logo=instagram">
+  </a>
+  <a href="mailto:rajsonugupta9@gmail.com">
+    <img alt="Gmail" src="https://img.shields.io/badge/Gmail-red?style=for-the-badge&logo=gmail">
+  </a>
+</p>
+
 
