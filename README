@@ -1,39 +1,34 @@
-# 🎬 Ultra Downloader Pro
+<h1 align="center">🎬 Ultra Downloader Pro</h1>
 
-A full-stack web app that allows users to **download high-quality videos and audio** from platforms like **YouTube**, **Instagram**, and **Facebook** — including **private/restricted** content using cookie-based authentication.
+<p align="center">
+  A web app to <strong>download high-quality videos/audio</strong> from <em>YouTube</em>, <em>Instagram</em>, and <em>Facebook</em> securely using cookies.
+</p>
 
-> ⚡ Powered by Flask & yt-dlp • Secure 🔒 • Modern UI • Deployable on Render
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python" />
+  <img src="https://img.shields.io/badge/Flask-Backend-green?style=for-the-badge&logo=flask" />
+  <img src="https://img.shields.io/badge/yt--dlp-Supported-yellow?style=for-the-badge" />
+</p>
 
 ---
 
-## 🌐 Live Demo
+## 🚀 Live Demo
 
-- 🚀 *Coming soon on [Render](https://render.com)*  
-- 🛠️ Deploy it yourself via: [Render Deploy Config](https://render.com)
+- 🔗 *Coming soon on [Render](https://render.com)*
+- ☁️ Deploy: [One-Click Render Deploy](https://render.com)
 
 ---
 
 ## ✨ Features
 
-- ✅ Supports downloads from **YouTube**, **Instagram**, and **Facebook**
-- 🔐 **Cookie-based login** for private or restricted content
-- 🎵 Download in **MP4 / MP3** – Best available quality
-- ⚡ **Multithreaded** download support for faster processing
-- 🧹 Auto-delete server file after browser download
-- 🖤 Clean and modern **Dark UI** for better UX
+- ✅ **YouTube**, **Instagram**, **Facebook** download support
+- 🔐 Cookie-based login for private content
+- 🎵 Download in **MP4 / MP3**
+- ⚡ Multithreaded fast download
+- 🧹 Auto-delete after browser download
+- 🌙 Sleek, modern dark UI
 
 ---
 
-## 🧱 Tech Stack
-
-| Layer     | Technology                          |
-|-----------|-------------------------------------|
-| Frontend  | HTML5, CSS3, JavaScript             |
-| Backend   | Python (Flask)                      |
-| Library   | [yt-dlp](https://github.com/yt-dlp/yt-dlp) |
-| Hosting   | [Render](https://render.com)        |
-
----
-
-## 🛠️ Project Structure
+## 📁 Project Structure
 
