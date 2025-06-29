@@ -1,4 +1,4 @@
-<h1 align="center">🎬 Ultra Downloader Pro</h1>
+# 🎬 Ultra Downloader Pro
 
 <p align="center">
   A web app to <strong>download high-quality videos/audio</strong> from <em>YouTube</em>, <em>Instagram</em>, and <em>Facebook</em> securely using cookies.
@@ -15,18 +15,18 @@
 ## 🚀 Live Demo
 
 - 🔗 *Coming soon on [Render](https://render.com)*
-- ☁️ Deploy: [One-Click Render Deploy](https://render.com)
+- ☁️ **Deploy:** [One-Click Render Deploy](https://render.com)
 
 ---
 
 ## ✨ Features
 
-- ✅ **YouTube**, **Instagram**, **Facebook** download support
-- 🔐 Cookie-based login for private content
-- 🎵 Download in **MP4 / MP3**
-- ⚡ Multithreaded fast download
-- 🧹 Auto-delete after browser download
-- 🌙 Sleek, modern dark UI
+- ✅ **YouTube**, **Instagram**, **Facebook** download support  
+- 🔐 Cookie-based login for private content  
+- 🎵 Download in **MP4 / MP3**  
+- ⚡ Multithreaded fast download  
+- 🧹 Auto-delete after browser download  
+- 🌙 Sleek, modern dark UI  
 
 ---
 
